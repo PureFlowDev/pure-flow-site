@@ -185,8 +185,9 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 16px; border-radius: 10px;
   background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-  gap: 16px; flex-wrap: wrap;
+  gap: 16px; flex-wrap: nowrap;
 }
+.pf-app-row > div:first-child { flex: 1; min-width: 0; }
 .pf-app-name { font-size: 14px; color: var(--text); }
 .pf-app-desc { font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
 .pf-app-price { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--cyan); white-space: nowrap; text-align: right; flex-shrink: 0; }
