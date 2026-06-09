@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pure Flow — Built different. Priced once.</title>
+<title>Pure Flow: Built Different. Priced Once.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -252,9 +252,9 @@ footer a:hover { color: var(--cyan); }
 
 <!-- HERO -->
 <section class="hero">
-  <p class="eyebrow">pureflowapps.com — a small app family</p>
+  <p class="eyebrow">pureflowapps.com · a small app family</p>
   <h1 class="hero-title">built <em>different.</em><br>priced <em>once.</em></h1>
-  <p class="hero-body">Most apps are built to extract. Subscriptions that never end, data you never agreed to share, interfaces designed to confuse. We got tired of it and built something different — tools that do one thing well, cost a fixed amount once, and leave you alone.</p>
+  <p class="hero-body">Most apps are built to extract. Subscriptions that never end, data you never agreed to share, interfaces designed to confuse. We got tired of it and built something different: tools that do one thing well, cost a fixed amount once, and leave you alone.</p>
   <div class="hero-ctas">
     <a href="/ambient" class="btn-primary">pure flow ambient →</a>
     <a href="/ledger" class="btn-secondary">pure flow ledger →</a>
@@ -263,16 +263,16 @@ footer a:hover { color: var(--cyan); }
 
 <!-- VALUES -->
 <div class="values-strip">
-  <span class="value-item"><strong>one-time purchase</strong> — never a subscription</span>
-  <span class="value-item"><strong>zero telemetry</strong> — your data stays on your device</span>
-  <span class="value-item"><strong>offline first</strong> — works without a connection</span>
+  <span class="value-item"><strong>one-time purchase.</strong> Never a subscription.</span>
+  <span class="value-item"><strong>zero telemetry.</strong> Your data stays on your device.</span>
+  <span class="value-item"><strong>offline first.</strong> Works without a connection.</span>
 </div>
 
 <!-- CALCULATOR -->
 <section class="section">
   <p class="eyebrow">the real cost calculator</p>
   <h2 class="section-title">what are you <em>actually</em> paying?</h2>
-  <p class="section-body">Add up your recurring costs — software, streaming, home leases, all of it. The number tends to be worse than you think.</p>
+  <p class="section-body">Add up your recurring costs: software, streaming, home leases, all of it. The number tends to be worse than you think.</p>
 
   <div class="preset-category">
     <p class="preset-category-label">streaming & entertainment</p>
@@ -353,14 +353,14 @@ footer a:hover { color: var(--cyan); }
       <div class="pf-app-row">
         <div>
           <p class="pf-app-name">Pure Flow: Ledger</p>
-          <p class="pf-app-desc">Personal finance — budgets, transactions, multi-currency. No account. No sync. No subscription.</p>
+          <p class="pf-app-desc">Personal finance: budgets, transactions, multi-currency. No account. No sync. No subscription.</p>
         </div>
         <div class="pf-app-price">$15 <span>one time</span></div>
       </div>
       <div class="pf-app-row">
         <div>
           <p class="pf-app-name">Pure Flow: Ambient</p>
-          <p class="pf-app-desc">Ambient sound for focus and sleep — fully offline, zero ads, customizable mixes.</p>
+          <p class="pf-app-desc">Ambient sound for focus and sleep. Fully offline, zero ads, customizable mixes.</p>
         </div>
         <div class="pf-app-price">free <span>+ premium one-time</span></div>
       </div>
@@ -379,7 +379,7 @@ footer a:hover { color: var(--cyan); }
     <a href="/ambient" class="app-card">
       <p class="app-card-eyebrow">sound & focus</p>
       <h3 class="app-card-name">Pure Flow<br><em>Ambient</em></h3>
-      <p class="app-card-desc">Layered ambient sound for focus, sleep, and recovery. Brown noise, rain, fire, and more — mixed your way, fully offline.</p>
+      <p class="app-card-desc">Layered ambient sound for focus, sleep, and recovery. Brown noise, rain, fire, and more. Mixed your way, fully offline.</p>
       <div class="app-card-footer">
         <span class="app-card-price">free + one-time premium</span>
         <span class="app-card-arrow">explore →</span>
@@ -388,7 +388,7 @@ footer a:hover { color: var(--cyan); }
     <a href="/ledger" class="app-card">
       <p class="app-card-eyebrow">personal finance</p>
       <h3 class="app-card-name">Pure Flow<br><em>Ledger</em></h3>
-      <p class="app-card-desc">Track spending, set budgets, manage multiple accounts and currencies. Your data stays on your device — always.</p>
+      <p class="app-card-desc">Track spending, set budgets, manage multiple accounts and currencies. Your data stays on your device. Always.</p>
       <div class="app-card-footer">
         <span class="app-card-price">$15 one-time</span>
         <span class="app-card-arrow">explore →</span>
@@ -442,7 +442,7 @@ footer a:hover { color: var(--cyan); }
     if (monthly > 0) {
       const y5 = yearly * 5;
       const saved = y5 - 15; // Ledger $15 + Ambient free
-      note.innerHTML = `At your current rate you'll spend <strong>${fmt(yearly)}</strong> this year on recurring costs. Over 5 years that's <strong>${fmt(y5)}</strong>. Both Pure Flow apps together cost <strong>$15</strong> — once. That's a <strong>${fmt(saved)}</strong> difference over five years.`;
+      note.innerHTML = `At your current rate you'll spend <strong>${fmt(yearly)}</strong> this year on recurring costs. Over 5 years that's <strong>${fmt(y5)}</strong>. Both Pure Flow apps together cost <strong>$15</strong>. Once. That's a <strong>${fmt(saved)}</strong> difference over five years.`;
     } else {
       note.textContent = 'Toggle some subscriptions above to see what they actually cost over time.';
     }
@@ -464,7 +464,7 @@ footer a:hover { color: var(--cyan); }
     const el = document.createElement('div');
     el.className = 'custom-chip';
     el.dataset.id = id;
-    el.innerHTML = `<span>${name} — ${fmtDec(amount)}/mo</span><button class="custom-chip-remove" onclick="removeCustom(${id})">×</button>`;
+    el.innerHTML = `<span>${name}: ${fmtDec(amount)}/mo</span><button class="custom-chip-remove" onclick="removeCustom(${id})">×</button>`;
     document.getElementById('customItems').appendChild(el);
 
     document.getElementById('customName').value = '';
