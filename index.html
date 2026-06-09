@@ -45,7 +45,7 @@ nav {
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
+  min-height: 100vh; position: relative;
   display: flex; flex-direction: column; justify-content: center;
   max-width: 820px; margin: 0 auto;
   padding: 120px 28px 80px;
@@ -83,6 +83,29 @@ nav {
   transition: border-color 0.2s, color 0.2s;
 }
 .btn-secondary:hover { border-color: var(--cyan); color: var(--text); }
+
+/* ── SCROLL SNAP (mobile only) ── */
+@media (max-width: 768px) {
+  html { scroll-snap-type: y proximity; }
+  .hero, .values-strip, .section { scroll-snap-align: start; }
+}
+
+/* ── SCROLL CUE ── */
+.scroll-cue {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  opacity: 1; transition: opacity 0.5s;
+  pointer-events: none;
+}
+.scroll-cue.hidden { opacity: 0; }
+.scroll-cue-label { font-size: 11px; letter-spacing: 2.5px; color: var(--muted); text-transform: lowercase; }
+.scroll-cue svg {
+  animation: bounce 1.6s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(7px); }
+}
 
 /* ── DIVIDER ── */
 .rule { border: none; border-top: 1px solid var(--border); }
@@ -318,7 +341,23 @@ footer a:hover { color: var(--cyan); }
     <a href="/ambient" class="btn-primary">pure flow ambient →</a>
     <a href="/ledger" class="btn-secondary">pure flow ledger →</a>
   </div>
+  <div class="scroll-cue" id="scrollCue">
+    <span class="scroll-cue-label">explore</span>
+    <svg width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 7l6 6 6-6" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 </section>
+<script>
+  (function(){
+    var cue = document.getElementById('scrollCue');
+    if(!cue) return;
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 60) cue.classList.add('hidden');
+      else cue.classList.remove('hidden');
+    }, { passive: true });
+  })();
+</script>
 
 <!-- VALUES -->
 <div class="values-strip">
