@@ -355,7 +355,7 @@ footer a:hover { color: var(--cyan); }
           <p class="pf-app-name">Pure Flow: Ledger</p>
           <p class="pf-app-desc">Personal finance: budgets, transactions, multi-currency. No account. No sync. No subscription.</p>
         </div>
-        <div class="pf-app-price">$15 <span>one time</span></div>
+        <div class="pf-app-price">free <span>+ premium one-time</span></div>
       </div>
       <div class="pf-app-row">
         <div>
@@ -441,8 +441,8 @@ footer a:hover { color: var(--cyan); }
     const note = document.getElementById('savingsNote');
     if (monthly > 0) {
       const y5 = yearly * 5;
-      const saved = y5 - 15; // Ledger $15 + Ambient free
-      note.innerHTML = `At your current rate you'll spend <strong>${fmt(yearly)}</strong> this year on recurring costs. Over 5 years that's <strong>${fmt(y5)}</strong>. Both Pure Flow apps together cost <strong>$15</strong>. Once. That's a <strong>${fmt(saved)}</strong> difference over five years.`;
+      const saved = y5 - 30; // Ledger $15 + Ambient $15 premium
+      note.innerHTML = `At your current rate you'll spend <strong>${fmt(yearly)}</strong> this year on recurring costs. Over 5 years that's <strong>${fmt(y5)}</strong>. Both Pure Flow apps are free to start, with optional one-time upgrades at <strong>$15 each</strong>. That's a <strong>${fmt(saved)}</strong> difference over five years.`;
     } else {
       note.textContent = 'Toggle some subscriptions above to see what they actually cost over time.';
     }
