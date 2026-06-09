@@ -189,7 +189,7 @@ nav {
 }
 .pf-app-name { font-size: 14px; color: var(--text); }
 .pf-app-desc { font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
-.pf-app-price { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--cyan); white-space: nowrap; }
+.pf-app-price { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--cyan); white-space: nowrap; text-align: right; }
 .pf-app-price span { font-family: 'DM Sans', sans-serif; font-size: 10px; color: var(--muted); letter-spacing: 1px; display: block; text-align: right; margin-top: 2px; }
 .savings-note { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(31,41,55,0.8); font-size: 14px; color: rgba(243,244,246,0.72); line-height: 1.7; }
 .savings-note strong { color: var(--cyan); font-weight: 400; }
@@ -353,7 +353,7 @@ footer a:hover { color: var(--cyan); }
         <div class="pf-app-price">free <span>+ premium one-time</span></div>
       </div>
     </div>
-    <p class="savings-note" id="savingsNote">Toggle some subscriptions above to see what they actually cost over time.</p>
+    <p class="savings-note" id="savingsNote" style="display:none;"></p>
   </div>
 </section>
 
@@ -433,8 +433,9 @@ footer a:hover { color: var(--cyan); }
       const premiumCost = appCount * 15;
       const saved = y5 - premiumCost;
       note.innerHTML = `At your current rate you'll spend <strong>${fmt(yearly)}</strong> this year on recurring costs. Over 5 years that's <strong>${fmt(y5)}</strong>. Pure Flow's ${appCount} app${appCount !== 1 ? 's are' : ' is'} free to start, with one-time premium upgrades at <strong>$15 each</strong>. That's a <strong>${fmt(saved)}</strong> difference over five years.`;
+      note.style.display = 'block';
     } else {
-      note.textContent = 'Toggle some subscriptions above to see what they actually cost over time.';
+      note.style.display = 'none';
     }
   }
 
