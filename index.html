@@ -272,7 +272,16 @@ footer a:hover { color: var(--cyan); }
 <section class="section">
   <p class="eyebrow">the real cost calculator</p>
   <h2 class="section-title">what are you <em>actually</em> paying?</h2>
-  <p class="section-body">Add up your recurring costs: software, streaming, home leases, all of it. The number tends to be worse than you think.</p>
+  <p class="section-body">Start with what you're paying for apps like ours. Then add everything else. The number tends to be worse than you think.</p>
+
+  <div class="preset-category">
+    <p class="preset-category-label">apps we're replacing</p>
+    <div class="chips">
+      <div class="chip" data-amount="13.99" onclick="toggleChip(this)"><span>ambient sleep app</span><span class="chip-price">$13.99/mo</span></div>
+      <div class="chip" data-amount="12.99" onclick="toggleChip(this)"><span>meditation app</span><span class="chip-price">$12.99/mo</span></div>
+      <div class="chip" data-amount="14.99" onclick="toggleChip(this)"><span>budgeting app</span><span class="chip-price">$14.99/mo</span></div>
+    </div>
+  </div>
 
   <div class="preset-category">
     <p class="preset-category-label">streaming & entertainment</p>
