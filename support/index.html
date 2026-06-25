@@ -39,32 +39,19 @@
   .faq-a a { color: var(--cyan); text-decoration: none; }
   .faq-a a:hover { opacity: 0.8; }
 
-  /* CONTACT FORM */
+  /* CONTACT */
   .contact-section h2 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 8px; }
   .contact-section p { font-size: 14px; color: rgba(243,244,246,0.72); line-height: 1.8; margin-bottom: 24px; }
-  .contact-form { display: flex; flex-direction: column; gap: 14px; }
-  .contact-form input,
-  .contact-form textarea {
-    background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-    border-radius: 12px; padding: 14px 18px;
-    color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
-    outline: none; transition: border-color 0.2s; width: 100%;
-  }
-  .contact-form input:focus,
-  .contact-form textarea:focus { border-color: rgba(0,229,255,0.4); }
-  .contact-form input::placeholder,
-  .contact-form textarea::placeholder { color: var(--muted); }
-  .contact-form textarea { min-height: 140px; resize: vertical; }
-  .contact-form button {
-    align-self: flex-start;
+  .contact-button {
+    display: inline-flex; align-items: center; gap: 8px;
     background: var(--cyan); color: var(--bg);
     font-family: 'DM Sans', sans-serif; font-weight: 500;
     font-size: 12px; letter-spacing: 1px; text-transform: lowercase;
-    padding: 12px 28px; border-radius: 28px; border: none; cursor: pointer;
+    padding: 12px 28px; border-radius: 28px; text-decoration: none;
     transition: opacity 0.2s, transform 0.15s;
   }
-  .contact-form button:hover { opacity: 0.85; transform: translateY(-1px); }
-  .form-note { margin-top: 12px; font-size: 11px; color: var(--muted); }
+  .contact-button:hover { opacity: 0.85; transform: translateY(-1px); }
+  .form-note { margin-top: 14px; font-size: 11px; color: var(--muted); }
 
   /* FOOTER */
   footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
@@ -122,13 +109,8 @@
 
 <div class="contact-section">
   <h2>still need help?</h2>
-  <p>Send us a message and we'll get back to you as soon as we can.</p>
-  <form class="contact-form" action="https://formspree.io/f/xqeobjpd" method="POST">
-    <input type="email" name="email" placeholder="your email address" required>
-    <input type="text" name="subject" placeholder="what's it about? (app name, brief description)">
-    <textarea name="message" placeholder="describe what's happening..." required></textarea>
-    <button type="submit">send message →</button>
-  </form>
+  <p>Email us directly and we'll get back to you as soon as we can. Mention which app and what device/OS you're on if it's a bug.</p>
+  <a href="#" id="emailLink" class="contact-button">email us →</a>
   <p class="form-note">We typically reply within 1-2 business days.</p>
 </div>
 
@@ -142,6 +124,20 @@
     <a href="/privacy/ledger">ledger privacy</a>
   </div>
 </footer>
+
+<script>
+  (function(){
+    var user = 'pureflowdev+support';
+    var domain = 'gmail.com';
+    var subject = 'Pure Flow support';
+    var body = "What were you trying to do?\n\nWhat happened instead?\n\n(app name + device, if relevant)";
+    var href = 'mailto:' + user + '@' + domain
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+    var link = document.getElementById('emailLink');
+    if (link) link.setAttribute('href', href);
+  })();
+</script>
 
 </body>
 </html>

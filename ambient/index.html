@@ -475,10 +475,10 @@ button.btn-news { font-family: inherit; }
   </a>
   <div class="nav-right">
     <button class="btn-news" onclick="openNews()">news</button>
-    <button id="storeBtn" class="btn-store" onclick="openComingSoon()">
+    <a id="storeBtn" class="btn-store" href="https://play.google.com/store/apps/details?id=com.pureflow.pureflowmobile" target="_blank" rel="noopener noreferrer">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 1-.97-1.76V2a2 2 0 0 1 .97-1.76l11.5 11.76-11.5 11.76zm13.26-9.01L4.13 22.23l10.31-10.55 2 2.07zM20.4 10.6c.6.34 1 .98 1 1.4s-.4 1.06-1 1.4l-2.8 1.58-2.2-2.25 2.2-2.25L20.4 10.6zM4.13 1.77l12.31 7.48-2 2.07L4.13 1.77z"/></svg>
       get it free
-    </button>
+    </a>
     <button class="hamburger" id="hamburger" aria-label="menu">
       <span></span><span></span><span></span>
     </button>
@@ -542,19 +542,6 @@ button.btn-news { font-family: inherit; }
   <a href="javascript:void(0)" onclick="openLearn();closeDrawer()">features</a>
   <div class="drawer-section">legal</div>
   <a href="/privacy/ambient">privacy policy</a>
-</div>
-
-<!-- ==================== COMING SOON ==================== -->
-<div class="coming-soon-overlay" id="comingSoonOverlay">
-  <div class="coming-soon-card">
-    <button class="coming-soon-close" onclick="closeComingSoon()">&#x2715;</button>
-    <div class="coming-soon-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-    </div>
-    <p class="coming-soon-eyebrow">almost there</p>
-    <h2 class="coming-soon-title">currently in <em>testing</em></h2>
-    <p class="coming-soon-body">pure flow is in testing on the google play store. it'll be available to download very soon. Check back shortly.</p>
-  </div>
 </div>
 
 <!-- ==================== MISSION ==================== -->
@@ -625,6 +612,15 @@ button.btn-news { font-family: inherit; }
     </div>
 
          ============================================================ -->
+
+    <div class="news-entry">
+      <p class="news-entry-date">june 2026</p>
+      <span class="news-tag">launch</span>
+      <h3 class="news-entry-title">pure flow is <em>live</em></h3>
+      <div class="news-body">
+        <p>Pure Flow: Focus & Recovery is live on the Google Play Store — full release, no more testing flag. One-time purchase, zero accounts, zero tracking, exactly as planned.</p>
+      </div>
+    </div>
 
       <div class="entry">
        <p class="entry-date">may 2026</p>
@@ -1012,14 +1008,6 @@ hamburger.addEventListener('click', () => drawer.classList.contains('open') ? cl
 overlay.addEventListener('click', closeDrawer);
 window.closeDrawer = closeDrawer;
 
-// Coming-soon overlay
-const comingSoonOverlay = document.getElementById('comingSoonOverlay');
-function openComingSoon()  { comingSoonOverlay.classList.add('open'); }
-function closeComingSoon() { comingSoonOverlay.classList.remove('open'); }
-comingSoonOverlay.addEventListener('click', e => { if (e.target === comingSoonOverlay) closeComingSoon(); });
-window.openComingSoon  = openComingSoon;
-window.closeComingSoon = closeComingSoon;
-
 // Learn overlay
 const learnOverlay = document.getElementById('learnOverlay');
 function openLearn()  { learnOverlay.classList.add('open'); }
@@ -1047,7 +1035,7 @@ window.closeNews = closeNews;
 
 // Keyboard
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeLearn(); closeMission(); closeComingSoon(); closeNews(); }
+  if (e.key === 'Escape') { closeLearn(); closeMission(); closeNews(); }
 });
 </script>
 
